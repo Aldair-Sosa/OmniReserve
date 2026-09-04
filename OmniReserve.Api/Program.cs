@@ -18,9 +18,9 @@ var app = builder.Build();
 //     app.MapOpenApi();
 // }
 
-//Pepiline de middleware 
 
-//Pepiline de middleware para Swagger
+
+//Pepiline de middleware para Swagger agregado correctamente
 app.UseSwagger();
 app.UseSwaggerUI();
 
