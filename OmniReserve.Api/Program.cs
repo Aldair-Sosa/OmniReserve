@@ -9,7 +9,8 @@ builder.Services.AddOpenApi();
 //Registro de servicio de generacion Swagger
 builder.Services.AddSwaggerGen();
 
-
+builder.Services.AddApplication();
+builder.Services.AddApplication(builder.Configuration);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
