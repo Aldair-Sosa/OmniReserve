@@ -1,10 +1,12 @@
-namespace Microsoft.Extensions.DependencyInjection; 
+using Microsoft.Extensions.DependencyInjection; 
+
+using Microsoft.Extensions.Configuration;
 
 namespace OmniReserve.Infrastructure;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddApplication(IConfiguration configuration)
+    public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
         return services;
     }
