@@ -1,5 +1,3 @@
-//Se agregaron de proyectos al archivo de solucion OmniReserve.slnx
-
 <Solution>
   <Project Path="OmniReserve.Api/OmniReserve.Api.csproj" />
   <Project Path="OmniReserve.Application/OmniReserve.Application.csproj" />
