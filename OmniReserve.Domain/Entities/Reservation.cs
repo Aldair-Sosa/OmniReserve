@@ -1,9 +1,7 @@
-using OmniReserve.Domain.Enums; 
-using OmniReserve.Domain.Exception;
 
-
+using OmniReserve.Domain.Enums;
+using OmniReserve.Domain.Exceptions;
 namespace OmniReserve.Domain.Entities;
-// Entidad de la resera de una habitacion
 public class Reservation
 {
     public Guid Id { get; private set; }
@@ -17,7 +15,7 @@ public class Reservation
     public Reservation(Guid userId, Guid roomId, DateTime checkInDate, DateTime checkOutDate, decimal totalPrice)
     {
         if (checkInDate >= checkOutDate)
-            throw new InvalidReservationDatesException();
+            throw new InvalidReservationDatesException(checkInDate, checkOutDate);
 
         Id = Guid.NewGuid();
         UserId = userId;

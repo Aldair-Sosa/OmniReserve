@@ -1,3 +1,6 @@
+
+
+
 namespace OmniReserve.Domain.Enums; 
 
 public enum RoomType
