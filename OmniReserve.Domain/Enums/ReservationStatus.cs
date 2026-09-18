@@ -1,3 +1,7 @@
+
+
+
+
 namespace OmniReserve.Domain.Enums;
 public enum ReservationStatus
 {
@@ -6,3 +10,4 @@ public enum ReservationStatus
     Cancelled,
     Completed
 }
+
