@@ -10,6 +10,7 @@ public class CreateRoomCommandHandler : IRequestHandler<CreateRoomCommand, Guid>
     {
         var room = new Room(request.RoomNumber, request.Type, request.PricePerNight);
     
+    //Simulacion aqui se guardaria en la base de datos.S
         return Task.FromResult(room.Id);
     }
 }
