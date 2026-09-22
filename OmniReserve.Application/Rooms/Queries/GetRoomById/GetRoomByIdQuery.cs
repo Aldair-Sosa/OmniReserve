@@ -4,5 +4,5 @@ namespace OmniReserve.Application.Rooms.Queries.GetRoomById;
 
 public class GetRoomByIdQuery : IRequest<RoomResponseDto>
 {
-    public Guid Id { get; set; }
+    public Guid RoomId { get; set; }
 }
