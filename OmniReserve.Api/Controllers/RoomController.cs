@@ -5,7 +5,8 @@ using OmniReserve.Application.Rooms.Commands.CreateRoom;
 
 namespace OmniReserve.Api.Controllers;
 
-
+[ApiController]
+[Route("api/[Controller]")]
 public class RoomController : ControllerBase
 {
     private readonly ISender _sender; 
