@@ -3,6 +3,7 @@ using OmniReserve.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 // Add services to the container.
 builder.Services.AddControllers();
 
@@ -17,6 +18,10 @@ builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 
+//Registro del middleware Global
+app.UseMiddleware<OmniReserve.Api.Middlewares.GlobalExceptionHandlingMiddleware>();
+
+
 if (app.Environment.IsDevelopment())
     {
         //Pepiline de middleware para Swagger agregado correctamente
@@ -24,7 +29,6 @@ if (app.Environment.IsDevelopment())
         app.UseSwagger();
         app.UseSwaggerUI();
     }
-
 
 
 
