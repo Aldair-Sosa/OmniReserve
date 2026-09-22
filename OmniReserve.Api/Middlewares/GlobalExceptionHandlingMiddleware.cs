@@ -51,6 +51,8 @@ public class GlobalExceptionHandlingMiddleware
             await context.Response.WriteAsync(JsonSerializer.Serialize(validationProblem));
             return;
         }
+
+        //Se agrego de forma correcta la nueva excepcion
          else if (exception is DomainException domainException)
         {
             var domainProblem = new ProblemDetails
