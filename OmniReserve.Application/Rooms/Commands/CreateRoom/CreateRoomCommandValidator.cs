@@ -4,6 +4,7 @@ namespace OmniReserve.Application.Rooms.Commands.CreateRoom;
 
 public class CreateRoomCommandValidator : AbstractValidator<CreateRoomCommand>
 {
+    //No hubo errores de compilacion
      public CreateRoomCommandValidator()
     {
         RuleFor(v => v.RoomNumber)
