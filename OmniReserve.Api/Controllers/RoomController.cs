@@ -24,6 +24,7 @@ public class RoomController : ControllerBase
         return Ok(productId);
     }
 
+    //El enpoind Aparece en la plantilla Swagger de manera correcta
     [HttpGet("{id}")]
     public async Task<IActionResult> GetRoom(Guid  id)
     {
