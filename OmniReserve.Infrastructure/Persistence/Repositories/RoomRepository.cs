@@ -1,10 +1,10 @@
-using System.Reflection.Metadata.Ecma335;
 using OmniReserve.Application.Interfaces;
 using OmniReserve.Domain.Entities;
 namespace OmniReserve.Infrastructure.Peristence.Repositories;
 
 public class RoomRepository : IRoomRepository
 {
+    //La clase se agrego de forma correcta 
     private static readonly Dictionary<Guid, Room> _rooms = new();
     public Task AddAsync (Room room)
     {
@@ -18,7 +18,4 @@ public class RoomRepository : IRoomRepository
         _rooms.TryGetValue(Id, out var room); 
         return Task.FromResult(room);
     }
-
-
-    
 }
