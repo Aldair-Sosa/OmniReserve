@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OmniReserve.Domain\OmniReserve.Domain.csproj" />
+
   </ItemGroup>
 
   <ItemGroup>
