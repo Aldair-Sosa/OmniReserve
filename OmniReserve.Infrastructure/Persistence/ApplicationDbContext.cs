@@ -5,6 +5,7 @@ namespace OmniReserve.Infrastructure.Peristence;
 
 public class ApplicationDbContext : DbContext
 {
+    //La aplicacion del db de agrego de manera correcta en la capa Infrastructure
     public ApplicationDbContext (DbContextOptions <ApplicationDbContext> options) : base(options)
     {
         
