@@ -1,16 +1,31 @@
 using MediatR;
 using OmniReserve.Domain.Entities;
+using  OmniReserve.Application.Interfaces;
 
 namespace OmniReserve.Application.Rooms.Commands.CreateRoom;
 
 public class CreateRoomCommandHandler : IRequestHandler<CreateRoomCommand, Guid>
 {
 
-    public Task<Guid> Handle(CreateRoomCommand request, CancellationToken cancellationToken)
+     private readonly IRoomRepository _roomRepository;
+
+    public CreateRoomCommandHandler(IRoomRepository roomRepository)
     {
-        var room = new Room(request.RoomNumber, request.Type, request.PricePerNight);
-    
-    //Simulacion aqui se guardaria en la base de datos.S
-        return Task.FromResult(room.Id);
+        _roomRepository = roomRepository;
+    }
+
+    public async Task<Guid> Handle(
+        CreateRoomCommand request,
+        CancellationToken cancellationToken)
+    {
+        var room = new Room(
+            request.RoomNumber,
+            request.Type,
+            request.PricePerNight
+        );
+
+        await _roomRepository.AddAsync(room);
+
+        return room.Id;
     }
 }
