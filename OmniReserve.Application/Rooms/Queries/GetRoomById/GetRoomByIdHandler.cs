@@ -5,6 +5,7 @@ namespace OmniReserve.Application.Rooms.Queries.GetRoomById;
 
 public  class GetRoomByIdQueryHandler : IRequestHandler<GetRoomByIdQuery, RoomResponseDto>
 {
+    //La modificacion de los handlers se hizo de manera correcta 
      private readonly IRoomRepository _rooomRepository; 
 
      public GetRoomByIdQueryHandler(IRoomRepository roomRepository)
