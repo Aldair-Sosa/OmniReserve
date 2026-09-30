@@ -7,5 +7,5 @@ public class CreateRoomCommand : IRequest<Guid>
 {
     public string RoomNumber { get; set; } = string.Empty;
     public RoomType Type { get; set; }
-    public decimal PricePerNight { get; set; }
+    public decimal PriceNight { get; set; }
 }

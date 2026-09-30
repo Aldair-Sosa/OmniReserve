@@ -11,7 +11,7 @@ public class CreateRoomCommandValidator : AbstractValidator<CreateRoomCommand>
             .NotEmpty().WithMessage("El número de habitación es obligatorio.")
             .MaximumLength(5).WithMessage("El número no debe exceder 5 caracteres.");
 
-        RuleFor(v => v.PricePerNight)
+        RuleFor(v => v.PriceNight)
             .GreaterThan(0).WithMessage("El precio debe ser superior a 0.");
     }
 }
