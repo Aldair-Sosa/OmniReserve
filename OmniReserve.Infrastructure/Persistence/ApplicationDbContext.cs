@@ -12,7 +12,7 @@ public class ApplicationDbContext : DbContext
         
     }
 
-//Hola como estas 
+//Se agregaron las configuraciones en el dbcontext de manera correcta asi como las configuraciones.
     public DbSet<Room> Rooms { get; set; }
     public DbSet<User> Users { get; set; }
     public DbSet<Reservation> Reservations { get; set; }
