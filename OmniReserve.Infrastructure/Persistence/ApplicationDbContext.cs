@@ -1,5 +1,6 @@
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
+using OmniReserve.Domain.Entities;
 
 namespace OmniReserve.Infrastructure.Peristence; 
 
@@ -10,6 +11,11 @@ public class ApplicationDbContext : DbContext
     {
         
     }
+
+//Se agregaron las configuraciones en el dbcontext de manera correcta asi como las configuraciones.
+    public DbSet<Room> Rooms { get; set; }
+    public DbSet<User> Users { get; set; }
+    public DbSet<Reservation> Reservations { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
