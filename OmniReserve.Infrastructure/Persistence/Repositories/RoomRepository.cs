@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using OmniReserve.Application.Interfaces;
 using OmniReserve.Domain.Entities;
 namespace OmniReserve.Infrastructure.Peristence.Repositories;
@@ -5,17 +6,23 @@ namespace OmniReserve.Infrastructure.Peristence.Repositories;
 public class RoomRepository : IRoomRepository
 {
     //La clase se agrego de forma correcta 
-    private static readonly Dictionary<Guid, Room> _rooms = new();
-    public Task AddAsync (Room room)
-    {
-        _rooms [room.Id] = room; 
 
-        return Task.CompletedTask;
+    private readonly ApplicationDbContext _context;
+
+    public RoomRepository(ApplicationDbContext context)
+    {
+        _context = context;
+    }
+  
+    public async Task AddAsync (Room room)
+    {
+        await _context.Rooms.AddAsync(room);
+
+        await _context.SaveChangesAsync();
     }
 
-    public Task<Room?>  GetByIdAsync (Guid Id)
+    public async Task<Room?> GetByIdAsync (Guid Id)
     {
-        _rooms.TryGetValue(Id, out var room); 
-        return Task.FromResult(room);
+        return await _context.Rooms.FirstOrDefaultAsync(r => r.Id == Id);
     }
 }
