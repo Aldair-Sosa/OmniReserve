@@ -8,6 +8,7 @@ using OmniReserve.Infrastructure.Peristence;
 
 #nullable disable
 
+//La carpeta se agrego de forma correcta se creo la base de datos a Postgres sql
 namespace OmniReserve.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
