@@ -16,8 +16,10 @@ public class RoomRepository : IRoomRepository
   
     public async Task AddAsync (Room room)
     {
+        
+        
+        
         await _context.Rooms.AddAsync(room);
-
         await _context.SaveChangesAsync();
     }
 
