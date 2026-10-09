@@ -10,6 +10,7 @@ public class User
     public string Email {get; set;}
     public string PasswordHash {get; set;}
     public Role Role {get; set;}
+    public ICollection<Reservation> Reservations {get; private set;} = new List<Reservation>();
 
     public User(string firstName, string lastName, string email, string passwordHash, Role role)
     {
