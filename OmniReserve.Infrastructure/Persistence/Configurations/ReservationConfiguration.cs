@@ -25,6 +25,7 @@ public class ReservationConfiguration : IEntityTypeConfiguration<Reservation>
         builder.Property(r => r.CheckOutDate)
             .IsRequired();
 
+    //La configuracion de la relacion de hizo de manera correcta
         builder.HasOne(reservation => reservation.Room)
                .WithMany(room => room.Reservations)
                .HasForeignKey(reservation => reservation.RoomId)
