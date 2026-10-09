@@ -7,4 +7,5 @@ public interface IRoomRepository
     public Task AddAsync (Room room); 
 
     public Task<Room?> GetByIdAsync (Guid Id);
+    public Task <Room?> SearchByNumberAsync (string roomNumber); //
 }

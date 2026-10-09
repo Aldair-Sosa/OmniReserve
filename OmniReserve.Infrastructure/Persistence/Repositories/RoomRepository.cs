@@ -17,8 +17,6 @@ public class RoomRepository : IRoomRepository
     public async Task AddAsync (Room room)
     {
         
-        
-        
         await _context.Rooms.AddAsync(room);
         await _context.SaveChangesAsync();
     }
@@ -26,5 +24,11 @@ public class RoomRepository : IRoomRepository
     public async Task<Room?> GetByIdAsync (Guid Id)
     {
         return await _context.Rooms.FirstOrDefaultAsync(r => r.Id == Id);
+    }
+
+    public async Task<Room?> SearchByNumberAsync (string roomNumber)
+    {
+        return await _context.Rooms
+        .FirstOrDefaultAsync(r => r.RoomNumber == roomNumber);
     }
 }
