@@ -8,4 +8,5 @@ public interface IRoomRepository
 
     public Task<Room?> GetByIdAsync (Guid Id);
     public Task <Room?> SearchByNumberAsync (string roomNumber); //
+    public Task <List<Room>> GetRoomByTypeRawAsync (string roomType);
 }
