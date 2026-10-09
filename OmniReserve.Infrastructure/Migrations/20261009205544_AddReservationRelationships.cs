@@ -7,6 +7,8 @@ namespace OmniReserve.Infrastructure.Migrations
     /// <inheritdoc />
     public partial class AddReservationRelationships : Migration
     {
+
+        //LA migracion de hizo de manera correcta y se aggrego a la base de datos sin errores
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
