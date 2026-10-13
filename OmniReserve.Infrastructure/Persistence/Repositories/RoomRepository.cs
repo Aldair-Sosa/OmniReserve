@@ -1,7 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using OmniReserve.Application.Interfaces;
 using OmniReserve.Domain.Entities;
-namespace OmniReserve.Infrastructure.Peristence.Repositories;
+
+
+namespace OmniReserve.Infrastructure.Persistence.Repositories;
 
 public class RoomRepository : IRoomRepository
 {

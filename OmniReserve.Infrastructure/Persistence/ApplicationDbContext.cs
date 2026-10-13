@@ -2,8 +2,7 @@ using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using OmniReserve.Domain.Entities;
 
-namespace OmniReserve.Infrastructure.Peristence; 
-
+namespace OmniReserve.Infrastructure.Persistence;
 public class ApplicationDbContext : DbContext
 {
     //La aplicacion del db de agrego de manera correcta en la capa Infrastructure
