@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 
 namespace OmniReserve.Infrastructure.Persistence.Repositories;
-
+//La clase se agrego de forma correcta y no hay errores de compilacin
 public class ReservationRepository : IReservationRepository
 {
     private readonly ApplicationDbContext  _context; 
