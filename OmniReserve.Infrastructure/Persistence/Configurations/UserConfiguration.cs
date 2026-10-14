@@ -1,12 +1,13 @@
 using OmniReserve.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
+using OmniReserve.Domain.ValueObjects;
 
 namespace OmniReserve.Infrastructure.Peristence.Configuration;
 
 public class UserConfiguration : IEntityTypeConfiguration<User>
 {
+    //El programa corre de manera correctasssss
     public void Configure(EntityTypeBuilder<User> builder)
     {
         builder.ToTable("Users");
@@ -14,9 +15,17 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
          builder.Property(p => p.Id);
          
 
-         builder.Property(p => p.Email)
-         .IsRequired()
-         .HasMaxLength(100); 
+         builder.Property(user => user.Email)
+               .HasConversion(
+                   emailObj => emailObj.Value, // Cómo grabar (C# a SQL)
+                   emailStr => new EmailAddress(emailStr) // Cómo leer (SQL a C#)
+               )
+               .HasColumnName("Email") // Fuerza el nombre de la columna en la BD
+               .HasMaxLength(255)
+               .IsRequired();
+
+        builder.HasIndex(user => user.Email)
+               .IsUnique();
 
          
          builder.Property(p => p.FirstName)
