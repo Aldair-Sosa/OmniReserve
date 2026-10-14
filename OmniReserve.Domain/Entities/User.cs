@@ -8,7 +8,7 @@ public class User
     public Guid Id {get; set;}
     public string FirstName {get; set;}
     public string LastName {get; set;}
-    public EmailAddress Email {get; private set;}
+    public EmailAddress Email {get;  set;}
     public string PasswordHash {get; set;}
     public Role Role {get; set;}
     public ICollection<Reservation> Reservations {get; private set;} = new List<Reservation>();
