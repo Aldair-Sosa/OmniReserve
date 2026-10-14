@@ -7,6 +7,7 @@ namespace OmniReserve.Infrastructure.Peristence.Configuration;
 
 public class UserConfiguration : IEntityTypeConfiguration<User>
 {
+    //El programa corre de manera correctasssss
     public void Configure(EntityTypeBuilder<User> builder)
     {
         builder.ToTable("Users");
