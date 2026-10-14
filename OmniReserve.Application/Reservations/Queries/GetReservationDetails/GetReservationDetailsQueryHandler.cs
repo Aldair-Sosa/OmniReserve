@@ -6,6 +6,8 @@ namespace OmniReserve.Application.Reservations.Queries.GetReservationDetails;
 
 public class GetReservationDetailsQueryHandler : IRequestHandler<GetReservationDetailsQuery, ReservationDetailsDto>
 {
+
+    //El meotodo funciona de manera correcta y al compilar no hay errores
     private readonly IReservationRepository _reservationRepository;
 
     public GetReservationDetailsQueryHandler(IReservationRepository reservationRepository)
