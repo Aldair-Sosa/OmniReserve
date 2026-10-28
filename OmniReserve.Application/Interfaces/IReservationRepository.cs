@@ -4,4 +4,6 @@ namespace OmniReserve.Application.Interfaces;
 public interface IReservationRepository
 {
     public Task <Reservation?>GetReservationWithDetailsAsync (Guid id); 
+
+    public Task<bool> IsRoomAvailableAsync (Guid roomId, DateTime start, DateTime end);
 }
