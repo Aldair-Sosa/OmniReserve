@@ -23,6 +23,7 @@ public class ReservationRepository : IReservationRepository
             .FirstOrDefaultAsync(r => r.Id == id); 
     }
 
+    //El proyecto compila de manera correcta 
     public async Task<bool> IsRoomAvailableAsync (Guid roomId, DateTime start, DateTime end)
     {
         return await _context.Reservations
