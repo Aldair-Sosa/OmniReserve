@@ -1,5 +1,5 @@
 using OmniReserve.Domain.Entities;
-
+using MediatR;
 using OmniReserve.Application.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,6 +15,13 @@ public class ReservationRepository : IReservationRepository
         _context = context;
     }
 
+    public async Task  AddAsync (Reservation reservation)
+    {
+         await _context.Reservations.AddAsync(reservation); 
+         await _context.SaveChangesAsync();
+
+    }
+// 
     public async Task<Reservation?> GetReservationWithDetailsAsync(Guid id)
     {
         return await _context.Reservations
