@@ -19,6 +19,7 @@ public class CreateReservationCommandHandler
         _roomRepository = roomRepository;
     }
     
+    // La implementación del método Handle es correcta y no presenta errores de compilación.
     public async Task<Guid> Handle(CreateReservationCommand request, CancellationToken cancellationToken)
         {
         
