@@ -20,6 +20,7 @@ public static class DependencyInjection
         services.AddScoped<IRoomRepository, RoomRepository>(); 
         services.AddScoped<IReservationRepository, ReservationRepository>();
 
+        //Servicio para el hasheo de contraseñas utilizando BCrypt Compilacion de manera correcta
         services.AddScoped<IPasswordHasher, BCryptPasswordHasher>();
         
         return services;
