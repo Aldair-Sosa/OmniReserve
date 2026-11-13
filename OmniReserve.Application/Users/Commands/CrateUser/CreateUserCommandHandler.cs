@@ -15,6 +15,7 @@ public class CreateUserCommandHanldler : IRequestHandler<CreateUserCommand, Guid
         _passwordHasher = passwordHasher;
     }
 
+    //El metodo funciona correctaemente 
     public async Task <Guid> Handle(CreateUserCommand request, CancellationToken cancellattionToken)
     {
         var email = new EmailAddress(request.Email); 
