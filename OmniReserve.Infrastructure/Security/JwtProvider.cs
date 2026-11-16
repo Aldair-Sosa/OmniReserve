@@ -19,6 +19,7 @@ public class JwtProvider : IJwProvider
         _jwtSettings = jwtOptions.Value;
     }
 
+//El metodo funciona de manera correcta 
     public string Generate(User user)
     {
         var claims = new Claim[]
