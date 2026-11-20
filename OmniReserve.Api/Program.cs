@@ -1,14 +1,12 @@
 using OmniReserve.Application;
 using OmniReserve.Infrastructure;
+using OmniReserve.Application.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var connectionString =
     builder.Configuration.GetConnectionString("OmniReserveDb");
 
-Console.WriteLine(
-    $"¿Se encontró la cadena de conexión? {!string.IsNullOrWhiteSpace(connectionString)}"
-);
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -17,6 +15,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 //Registro de servicio de generacion Swagger
 builder.Services.AddSwaggerGen();
+
+
 
 //Llamada a los metodos de extwension para inyectar las dependencias de otras capas
 builder.Services.AddApplication();
